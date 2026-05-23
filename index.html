@@ -17,17 +17,29 @@
 
 
   <!-- ── NAVBAR ── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-logo">
-      <span class="logo-dot"></span>
-      <span class="logo-text">NK.</span>
-    </div>
+ <nav class="navbar" id="navbar">
+
+  <div class="nav-logo">
+    <span class="logo-dot"></span>
+    <span class="logo-text">Uji-Coba</span>
+  </div>
+
+  <div class="nav-right">
+
+    <button id="theme-toggle" class="theme-toggle">
+      🌙
+    </button>
+
     <ul class="nav-links">
       <li><a href="#about" class="nav-link">Tentang</a></li>
       <li><a href="#skills" class="nav-link">Keahlian</a></li>
       <li><a href="#projects" class="nav-link">Proyek</a></li>
       <li><a href="#contact" class="nav-link">Kontak</a></li>
     </ul>
+
+  </div>
+
+</nav>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -343,9 +355,24 @@
         <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
       </div>
     </div>
+    
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+      toggleBtn.textContent = "☀️";
+    } else {
+      toggleBtn.textContent = "🌙";
+    }
+  });
+</script>
 </body>
 
 </html>
