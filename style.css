@@ -971,16 +971,43 @@ img {
 
 /* ── FOOTER ── */
 .footer {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 72px 0 28px;
+  background:
+    radial-gradient(circle at top left, rgba(200, 169, 110, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(17, 17, 24, 0.95), rgba(11, 11, 15, 1));
 }
 
-.footer-inner {
+.footer::after {
+  content: '';
+  position: absolute;
+  inset: auto -40% -42% auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(139, 105, 212, 0.18), transparent 65%);
+  border-radius: 50%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+  justify-items: center;
+  text-align: center;
+}
+
+.footer-brand,
+.footer-links,
+.footer-contact,
+.footer-cta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 16px;
+  align-items: center;
 }
 
 .footer-logo {
@@ -991,7 +1018,77 @@ img {
 }
 
 .footer-copy {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 360px;
+}
+
+.footer-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-badges span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.73rem;
+  color: var(--text-muted);
+}
+
+.footer-links,
+.footer-contact,
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--accent);
+}
+
+.footer-cta p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom span {
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
@@ -999,7 +1096,7 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--surface);
+  background: linear-gradient(135deg, rgba(200, 169, 110, 0.16), rgba(139, 105, 212, 0.18));
   border: 1px solid var(--border);
   color: var(--text);
   font-size: 1rem;
