@@ -543,6 +543,12 @@ img {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
 
 .image-deco {
   position: absolute;
@@ -708,12 +714,15 @@ img {
 .project-placeholder {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: var(--surface);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  min-height: 200px;
+}
+
+.project-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* biar penuh */
+  display: block;
 }
 
 .project-overlay {
